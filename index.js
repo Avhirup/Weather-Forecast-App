@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const axios = require('axios');
 dotenv.config();
 
-const fs = require('@cyclic.sh/s3fs/promises')(cyclic - odd - gray - gorilla - yoke - ap - northeast - 2)
+const fs = require('@cyclic.sh/s3fs/promises')('cyclic-odd-gray-gorilla-yoke-ap-northeast-2')
 
 // const port = 8000;
 
