@@ -28,7 +28,6 @@ app.get('/main', (req, res) => {
 
 app.post('/', (req, res) => {
     const cityName = req.body.location;
-    console.log(cityName);
     const apiKey = process.env.WEATHER_API_KEY;
     const unit = "metric";
 
@@ -71,7 +70,6 @@ app.post('/', (req, res) => {
                 const forecast = response.data.response;
 
                 res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
-                console.log(temp);
             }
         })
     })
