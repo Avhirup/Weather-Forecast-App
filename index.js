@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 const axios = require('axios');
 dotenv.config();
 
-const port = 8000;
+// const port = 8000;
 
 const app = express();
 
@@ -77,6 +77,10 @@ app.post('/', (req, res) => {
     })
 });
 
-app.listen(port, () => {
-    console.log(`Server has started on port: ${port}`);
-})
+// app.listen(port, () => {
+//     console.log(`Server has started on port: ${port}`);
+// })
+
+const server = app.listen(process.env.PORT || 4000);
+const portNumber = server.address().port;
+console.log(`port is open on ${portNumber}`);
