@@ -1,0 +1,40 @@
+<%- include("partials/main-header"); -%>
+    <div class="main-section">
+
+        <div class="main-up">
+
+            <div class="section1">
+                <form action="/main" method="GET" class="back-icon">
+                    <button class="back">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </form>
+                <div class="date">
+                    <lord-icon src="https://cdn.lordicon.com/qjdnqpiz.json" trigger="loop" delay="2000"
+                        colors="outline:#121331,primary:#ffc738,secondary:#3a3347,tertiary:#ebe6ef"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                    <p></p>
+                </div>
+                <div class="reload">
+                    <i class="fa-solid fa-rotate-right" id="re"></i>
+                </div>
+            </div>
+
+            <div class="section2">
+                <div class="error">
+                    <lord-icon src="https://cdn.lordicon.com/vyukcgvf.json" trigger="loop" delay="1400"
+                        colors="outline:#121331,primary:#ffc738,secondary:#92140c" style="width:100px;height:100px">
+                    </lord-icon>
+
+                    <h2>
+                        Wrong Input, Please Go Back.
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <%- include("partials/footer"); -%>

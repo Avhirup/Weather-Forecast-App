@@ -1,0 +1,40 @@
+<%- include("partials/header"); -%>
+    <div class="container">
+        <section class="left">
+            <div class="logo">
+                <div class="glow"></div>
+                <!-- <lord-icon class="icon" src="https://cdn.lordicon.com/rzdoyang.json" trigger="loop" delay="750"
+                    colors="primary:#121331,secondary:#2ca58d,tertiary:#ffc738,quaternary:#b26836"
+                    style="width:250px;height:250px;">
+                </lord-icon> -->
+                <lord-icon src="https://cdn.lordicon.com/vkweisbr.json" trigger="loop" delay="1750"
+                    colors="outline:#121331,primary:#FF78C4,secondary:#8EAC50,tertiary:#00C4FF"
+                    style="width:280px;height:280px">
+                </lord-icon>
+            </div>
+            <div class="heading">
+                <h2><strong>Weather</strong><br>Forecast App.</h2>
+            </div>
+        </section>
+        <section class="right">
+            <p>Empowering users to effortlessly explore weather conditions in their city of choice, our platform
+                displays real-time weather updates and forecasts, ensuring informed decision-making. Effortlessly plan
+                your day, come rain or shine, and stay ahead of changing weather patterns with our intuitive search
+                interface.
+            </p>
+            <form action="/" method="POST" class="box-form">
+                <input type="text" name="location" id="location-inp" placeholder="Search your City" required
+                    autocomplete="off">
+                <button class="btn">
+                    <!-- <lord-icon src="https://cdn.lordicon.com/doxxiooo.json" trigger="loop" delay="1500"
+                        colors="outline:#121331,primary:#606874,secondary:#ebe6ef" style="width:50px;height:50px">
+                    </lord-icon> -->
+                    <lord-icon src="https://cdn.lordicon.com/osbjlbsb.json" trigger="loop" delay="1200"
+                        colors="outline:#121331,secondary:#b26836,secondary2:#5c71f9,quaternary:#ebe6ef"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </button>
+            </form>
+        </section>
+    </div>
+    <%- include("partials/footer"); -%>

@@ -1,0 +1,92 @@
+<%- include("partials/main-header"); -%>
+    <div class="main-section">
+
+        <div class="main-up">
+
+            <div class="section1">
+                <form action="/main" method="GET" class="back-icon">
+                    <button class="back">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </form>
+                <div class="date">
+                    <lord-icon src="https://cdn.lordicon.com/qjdnqpiz.json" trigger="loop" delay="2000"
+                        colors="outline:#121331,primary:#ffc738,secondary:#3a3347,tertiary:#ebe6ef"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                    <p></p>
+                </div>
+                <div class="reload">
+                    <i class="fa-solid fa-rotate-right" id="re"></i>
+                    <!-- <input type="button" value="Reload Page" onClick="window.location.reload(true)"> -->
+                </div>
+            </div>
+
+            <div class="section2">
+                <div class="img-shadow"></div>
+                <div class="icon">
+                    <img src=<%=img %> alt="icon">
+                </div>
+                <div class="temp">
+                    <p class="city-name">
+                        <%= cityName %>
+                    </p>
+                    <div class="temperature">
+                        <h2>
+                            <%= temp %><span>°C</span>
+                        </h2>
+                        <p>/ <%= description %>
+                        </p>
+                    </div>
+                    <p>
+                        Lat: <%= lat %> - Lon: <%= lon %>
+                    </p>
+                </div>
+            </div>
+
+            <div class="section3">
+                <div class="line"></div>
+                <div class="sec3-content">
+                    <div class="elem">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Humidity</span>
+                        <p>
+                            <%= humidity %>
+                        </p>
+                    </div>
+                    <div class="elem">
+                        <i class="fa-solid fa-wind"></i>
+                        <span>Wind Speed</span>
+                        <p>
+                            <%= windSpeed %>
+                        </p>
+                    </div>
+                    <div class="elem">
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                        <span>Feels Like</span>
+                        <p>
+                            <%= feelsLike %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-down">
+            <h2><em>Weather Forecast</em></h2>
+            <div class="main-down-line"></div>
+            <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, ea. <br>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio exercitationem odio, deleniti reiciendis
+                ab omnis.
+                <br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, explicabo est? Nisi?
+            </p> -->
+            <p>
+                <%= forecast %>
+            </p>
+        </div>
+
+    </div>
+
+
+    <%- include("partials/footer"); -%>
