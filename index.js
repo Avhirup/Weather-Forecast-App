@@ -7,16 +7,16 @@ const dotenv = require("dotenv");
 const axios = require('axios');
 dotenv.config();
 
-const fs = require('@cyclic.sh/s3fs/promises')('cyclic-odd-gray-gorilla-yoke-ap-northeast-2')
+// const fs = require('@cyclic.sh/s3fs/promises')('cyclic-odd-gray-gorilla-yoke-ap-northeast-2')
 
-// const port = 8000;
+const port = 8000;
 
 const app = express();
 
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, './public')));
 // app.use(express.static("public"));
 
 
@@ -27,8 +27,7 @@ app.get('/main', (req, res) => {
     res.render("home");
 })
 
-
-app.post('/', (req, res) => {
+app.post('/main', (req, res) => {
     const cityName = req.body.location;
     const apiKey = process.env.WEATHER_API_KEY;
     const unit = "metric";
@@ -57,25 +56,34 @@ app.post('/', (req, res) => {
 
                 //! for chatGPT
                 const options = {
-                    method: 'POST',
-                    url: 'https://chatgpt-gpt4-ai-chatbot.p.rapidapi.com/ask',
-                    headers: {
-                        'content-type': 'application/json',
-                        'X-RapidAPI-Key': process.env.CHAT_GPT_API_KEY,
-                        'X-RapidAPI-Host': 'chatgpt-gpt4-ai-chatbot.p.rapidapi.com'
+                    method: 'GET',
+                    url: 'https://chatgpt-api9.p.rapidapi.com/ask',
+                    params: {
+                        question: `Forecast the weather of the location: ${city} where Latitude: ${lat} & Longitude: ${lon}, and write the response WEATHER FORECAST MANNER.`
                     },
-                    data: {
-                        query: `Forecast the weather of the location: ${city} where Latitude: ${lat} & Longitude: ${lon}, and write the response in weather forecast style.`
+                    headers: {
+                        'X-RapidAPI-Key': process.env.CHAT_GPT_API_KEY,
+                        'X-RapidAPI-Host': 'chatgpt-api9.p.rapidapi.com'
                     }
                 };
-                const response = await axios.request(options);
-                const forecast = response.data.response;
 
-                res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
+                try {
+                    const response = await axios.request(options);
+                    const forecast = response.data.answer;
+                    res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
+                } catch (error) {
+                    const forecast = `Apologies, Due to some internal error we are unable to forecast the weather.`;
+                    res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
+                    console.error(error);
+                }
+
+                // res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
             }
         })
     })
 });
+
+
 
 // app.listen(port, () => {
 //     console.log(`Server has started on port: ${port}`);

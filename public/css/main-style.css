@@ -13,6 +13,7 @@ body {
 
 .main-section {
   padding: 0 !important;
+  margin-bottom: 5rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
