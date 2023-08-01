@@ -18,12 +18,10 @@
                 </div>
                 <div class="reload">
                     <i class="fa-solid fa-rotate-right" id="re"></i>
-                    <!-- <input type="button" value="Reload Page" onClick="window.location.reload(true)"> -->
                 </div>
             </div>
 
             <div class="section2">
-                <div class="img-shadow"></div>
                 <div class="icon">
                     <img src=<%=img %> alt="icon">
                 </div>
@@ -39,7 +37,7 @@
                         </p>
                     </div>
                     <p>
-                        Lat: <%= lat %> - Lon: <%= lon %>
+                        <span>Lat: <%= lat %></span> <span>-</span> <span> Lon: <%= lon %></span>
                     </p>
                 </div>
             </div>
@@ -74,7 +72,7 @@
 
         <div class="main-down">
             <h2><em>Weather Forecast</em></h2>
-            <div class="main-down-line"></div>
+            <hr>
             <p>
                 <%= forecast %>
             </p>

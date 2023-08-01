@@ -7,6 +7,7 @@
 }
 
 body {
+    min-height: 100vh;
     background-color: #4D65FC;
 }
 
@@ -20,19 +21,16 @@ body {
     color: azure;
 
     .left {
-        // border: 1px solid black;
         flex: 1;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
         align-items: center;
 
         .logo {
-            // border: 1px solid white;
             position: relative;
 
             .glow {
-                // border: 1px solid red;
+                background: transparent;
                 left: 50%;
                 top: 50%;
                 position: absolute;
@@ -47,7 +45,6 @@ body {
                 font-family: 'Roboto', sans-serif;
                 letter-spacing: .1rem;
                 font-size: 2.5rem;
-                // text-shadow: 0px 1px 13px rgba(228, 234, 237, 0.10);
 
                 strong {
                     color: #ffc042;
@@ -59,7 +56,6 @@ body {
     .right {
         text-align: center;
         flex: 1.7;
-        // border: 1px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -107,5 +103,107 @@ body {
             }
 
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 7rem 5rem;
+
+        .left {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 3rem 3rem;
+
+        .left {
+            gap: 1rem;
+
+            lord-icon {
+                width: 150px !important;
+                height: 150px !important;
+            }
+
+            .glow {
+                left: 30% !important;
+                top: 50% !important;
+                width: 5px !important;
+                height: 5px !important;
+            }
+
+            .heading {
+                h2 {
+                    font-size: 2.1rem !important;
+                }
+            }
+        }
+
+        .right {
+
+            p {
+                font-size: 1rem !important;
+            }
+
+            .box-form {
+
+                input {
+                    font-size: 1rem;
+                }
+
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: 350px) {
+    .container {
+        padding: 3rem 3rem;
+
+        .left {
+            gap: .5rem !important;
+
+            lord-icon {
+                width: 130px !important;
+                height: 130px !important;
+            }
+
+            .glow {
+                left: 40% !important;
+                top: 50% !important;
+                width: 5px !important;
+                height: 5px !important;
+            }
+
+            .heading {
+                h2 {
+                    font-size: 1.85rem !important;
+                }
+            }
+        }
+
+        .right {
+
+            p {
+                font-size: .9rem !important;
+            }
+
+            .box-form {
+
+                input {
+                    font-size: .9rem;
+                }
+
+            }
+        }
+
     }
 }

@@ -1,4 +1,3 @@
-console.log("Sucess");
 const date = new Date();
 
 const year = date.getFullYear();
@@ -34,7 +33,6 @@ switch (month) {
 
 const day = date.getDate();
 
-console.log(`${day} ${b}, ${year}`);
 
 const d = document.querySelector(".date p");
 d.innerText = `${day} ${b}, ${year}`

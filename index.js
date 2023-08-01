@@ -7,7 +7,6 @@ const dotenv = require("dotenv");
 const axios = require('axios');
 dotenv.config();
 
-// const fs = require('@cyclic.sh/s3fs/promises')('cyclic-odd-gray-gorilla-yoke-ap-northeast-2')
 
 const port = 8000;
 
@@ -17,7 +16,6 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './public')));
-// app.use(express.static("public"));
 
 
 app.get('/', (req, res) => {
@@ -76,18 +74,12 @@ app.post('/main', (req, res) => {
                     res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
                     console.error(error);
                 }
-
-                // res.render("main", { cityName: city, lat: lat, lon: lon, description: description, temp: temp, humidity: humidity, feelsLike: feelsLike, windSpeed: windSpeed, img: imgURL, forecast: forecast });
             }
         })
     })
 });
 
 
-
-// app.listen(port, () => {
-//     console.log(`Server has started on port: ${port}`);
-// })
 
 const server = app.listen(process.env.PORT || 4000);
 const portNumber = server.address().port;

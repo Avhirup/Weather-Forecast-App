@@ -7,6 +7,7 @@
 }
 
 body {
+  min-height: 100vh;
   background-color: #011024;
   padding: 0 !important;
 }
@@ -22,9 +23,9 @@ body {
   gap: 2rem;
 }
 .main-section .main-up {
-  background-color: #319dfb;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  background-color: #15BFF6;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   box-shadow: 0px 23px 25px -7px rgba(10, 77, 161, 0.66);
   color: #F5F5F5;
   min-width: 93vw;
@@ -69,7 +70,6 @@ body {
   font-weight: 300;
 }
 .main-section .main-up .section1 .reload {
-  cursor: pointer;
   border: 1px solid #F5F5F5;
   width: 40px;
   height: 40px;
@@ -77,6 +77,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.main-section .main-up .section1 .reload i {
+  cursor: pointer;
 }
 .main-section .main-up .section2 {
   display: flex;
@@ -86,31 +89,13 @@ body {
   position: relative;
   transition: 0.2s all ease-in-out;
 }
-.main-section .main-up .section2 .img-shadow {
-  top: 30%;
-  left: 35%;
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  box-shadow: 64px 84px 109px 52px rgb(72, 73, 74);
-  box-shadow: 47px 73px 77px 40px rgb(72, 73, 74);
-  animation: anii 1.5s linear infinite alternate;
-}
-@keyframes anii {
-  from {
-    transform: translatey(-10px);
-  }
-  to {
-    transform: translatey(0);
-  }
-}
 .main-section .main-up .section2 .icon {
-  z-index: 9;
   transition: 0.2s all ease-in-out;
 }
 .main-section .main-up .section2 .icon img {
   width: 180px;
   animation: ani 1.1s linear infinite alternate;
+  filter: drop-shadow(19px 13px 20px rgba(72, 73, 74, 0.9));
 }
 @keyframes ani {
   from {
@@ -124,7 +109,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  z-index: 9;
 }
 .main-section .main-up .section2 .temp .city-name {
   font-weight: 500;
@@ -137,7 +121,7 @@ body {
 .main-section .main-up .section2 .temp .temperature h2 {
   font-size: 4.2rem;
   font-weight: 500;
-  text-shadow: -3px 2px 2px rgba(205, 201, 201, 0.86);
+  text-shadow: 3px 2px 2px rgba(205, 201, 201, 0.6);
 }
 .main-section .main-up .section2 .temp .temperature h2 span {
   font-size: 2rem;
@@ -182,13 +166,8 @@ body {
   font-weight: 500;
   margin-bottom: 0.3rem;
 }
-.main-section .main-down .main-down-line {
-  height: 1px;
-  width: 27%;
-  background-color: rgba(245, 245, 245, 0.7529411765);
-  margin-bottom: 1rem;
-}
 .main-section .main-down p {
+  margin-top: 1.5rem;
   padding: 0 1.5rem;
   font-weight: 300;
   letter-spacing: 1px;
@@ -198,4 +177,137 @@ body {
 .error {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 648px) {
+  .main-section .main-up {
+    gap: 3rem !important;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    max-width: 85vw;
+  }
+  .main-section .section1 .date {
+    display: flex;
+    padding: 0rem !important;
+    gap: 0.5rem !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-section .section1 .date p {
+    font-size: 1.1rem !important;
+    font-weight: 300;
+  }
+  .main-section .section2 {
+    gap: 1rem !important;
+  }
+  .main-section .section2 .icon img {
+    width: 140px !important;
+  }
+  .main-section .section2 .temp .city-name {
+    font-weight: 400;
+  }
+  .main-section .section2 .temp .temperature {
+    gap: 0.5rem !important;
+  }
+  .main-section .section2 .temp .temperature h2 {
+    font-size: 3.9rem !important;
+  }
+  .main-section .section2 .temp .temperature h2 span {
+    font-size: 1.8rem !important;
+  }
+  .main-section .section3 .line {
+    width: 70% !important;
+  }
+  .main-section .main-down {
+    max-width: 80vw;
+  }
+}
+@media (max-width: 480px) {
+  .main-section .main-up {
+    gap: 2.5rem !important;
+  }
+  .main-section .main-up .section1 .back-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .main-section .main-up .section1 .back-icon .back i {
+    font-size: 10px;
+  }
+  .main-section .main-up .section1 .date {
+    gap: 0.2rem !important;
+  }
+  .main-section .main-up .section1 .date lord-icon {
+    width: 33px !important;
+    height: 33px !important;
+  }
+  .main-section .main-up .section1 .date p {
+    font-size: 1rem !important;
+    font-weight: 300;
+  }
+  .main-section .main-up .section1 .reload {
+    width: 30px;
+    height: 30px;
+  }
+  .main-section .main-up .section1 .reload i {
+    font-size: 10px;
+  }
+  .main-section .main-up .section2 .icon img {
+    width: 110px !important;
+  }
+  .main-section .main-up .section2 .temp {
+    gap: 1rem !important;
+  }
+  .main-section .main-up .section2 .temp .city-name {
+    font-size: 1rem;
+    font-weight: 300 !important;
+  }
+  .main-section .main-up .section2 .temp .temperature {
+    gap: 0.5rem !important;
+    flex-direction: column;
+  }
+  .main-section .main-up .section2 .temp .temperature h2 {
+    font-size: 2.7rem !important;
+  }
+  .main-section .main-up .section2 .temp .temperature h2 span {
+    font-size: 1.2rem !important;
+  }
+  .main-section .main-up .section3 {
+    gap: 1rem;
+  }
+  .main-section .main-up .section3 .line {
+    width: 80% !important;
+  }
+  .main-section .main-up .section3 .sec3-content {
+    margin-top: 1rem;
+  }
+  .main-section .main-up .section3 .sec3-content .elem {
+    text-align: center;
+    font-size: 1rem !important;
+    font-weight: 100;
+  }
+  .main-section .main-up .section3 .sec3-content .elem span {
+    font-size: 0.8rem !important;
+    font-weight: 300;
+  }
+  .main-section .main-down h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
+  }
+  .main-section .main-down p {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 1.7rem;
+  }
+}
+@media (max-width: 400px) {
+  .main-section .main-up .section2 .temp p {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-section .main-up .section3 .sec3-content {
+    gap: 3rem !important;
+  }
 }/*# sourceMappingURL=main-style.css.map */

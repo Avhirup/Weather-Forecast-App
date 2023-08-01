@@ -6,6 +6,7 @@
 }
 
 body {
+  min-height: 100vh;
   background-color: #4D65FC;
 }
 
@@ -28,6 +29,7 @@ body {
   position: relative;
 }
 .container .left .logo .glow {
+  background: transparent;
   left: 50%;
   top: 50%;
   position: absolute;
@@ -90,4 +92,69 @@ body {
   cursor: pointer;
   background: transparent;
   border: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 7rem 5rem;
+  }
+  .container .left {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 3rem;
+  }
+  .container .left {
+    gap: 1rem;
+  }
+  .container .left lord-icon {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .container .left .glow {
+    left: 30% !important;
+    top: 50% !important;
+    width: 5px !important;
+    height: 5px !important;
+  }
+  .container .left .heading h2 {
+    font-size: 2.1rem !important;
+  }
+  .container .right p {
+    font-size: 1rem !important;
+  }
+  .container .right .box-form input {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 350px) {
+  .container {
+    padding: 3rem 3rem;
+  }
+  .container .left {
+    gap: 0.5rem !important;
+  }
+  .container .left lord-icon {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  .container .left .glow {
+    left: 40% !important;
+    top: 50% !important;
+    width: 5px !important;
+    height: 5px !important;
+  }
+  .container .left .heading h2 {
+    font-size: 1.85rem !important;
+  }
+  .container .right p {
+    font-size: 0.9rem !important;
+  }
+  .container .right .box-form input {
+    font-size: 0.9rem;
+  }
 }/*# sourceMappingURL=style.css.map */
